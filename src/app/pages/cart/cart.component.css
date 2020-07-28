@@ -1,0 +1,19 @@
+.cart {
+    margin-top: 1rem;
+    display: grid;
+}
+.cart_item {
+    border-bottom: 1px solid #b3b3b3;
+}
+.last-child .cart_item{
+    border: 0;
+}
+.empty-cart {
+    height: calc(100vh - 2rem - 70px);
+    width: 100%;
+    display: grid;
+    align-self: center;
+    align-content: center;
+    justify-content: center;
+    color: #a0a0a0;
+}

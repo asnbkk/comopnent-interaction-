@@ -1,0 +1,69 @@
+.card {
+    padding: 1rem;
+    background: #f0f0f0;
+}
+.card_bottom {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-gap: 1rem;
+}
+.card_button {
+    display: grid;
+    background: #252525;
+    height: 27.2px;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 13px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.added {
+    background: transparent;
+    border: 1px solid #252525;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    color: #252525;
+    transition: 0.2s;
+}
+.card_bottom__qnt {
+    display: grid;
+    grid-template-columns: auto 20px auto;
+    justify-items: center;
+    background: #fff;
+    cursor: default;
+
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none;
+            user-select: none;
+}
+.added_qnt {
+    opacity: 0.6;
+}
+.added_qnt .card_bottom__togle {
+    cursor: default;
+}
+.added_qnt .card_bottom__togle:hover {
+    background: transparent;
+}
+.card_bottom__togle {
+    width: 27.2px;
+    display: grid;
+    justify-content: center;
+    cursor: pointer;
+}
+.card_bottom__togle:hover {
+    background: #f5f5f5;
+}
+.cart {
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    background: #f0f0f0;
+    grid-gap: 1rem;
+}

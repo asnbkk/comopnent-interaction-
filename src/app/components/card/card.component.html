@@ -1,0 +1,26 @@
+<div class="card" *ngIf="type == 'def'">
+    <p>
+        name: 
+        {{data.name}}
+    </p>
+    <p>
+        price:
+        {{data.price}}
+    </p>
+    <div class="card_bottom">
+        <div class="card_bottom__qnt">
+            <div class="card_bottom__togle" (click)="onSubstract(data)">-</div>
+            {{data.qnt}}
+            <div class="card_bottom__togle" (click)="onAdd(data)">+</div>
+        </div> 
+        <div class="card_button" (click)="addToCart(data)" *ngIf="!existingCart.includes(data.name)">Add to cart</div>
+        <div class="card_button added" (click)="addToCart(data)" *ngIf="existingCart.includes(data.name)">Added</div>
+    </div>
+</div>
+
+<div class="cart" *ngIf="type == 'cart'">
+    <div class="item">{{data.name}}</div>
+    <div class="item"></div>
+    <div class="item">{{data.price}}</div>
+    <div class="item">{{data.price}}</div>
+</div>
