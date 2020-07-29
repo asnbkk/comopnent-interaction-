@@ -1,6 +1,6 @@
 .card {
     padding: 1rem;
-    background: #f0f0f0;
+    background: #f7f7f7;
 }
 .card_bottom {
     display: grid;
@@ -42,15 +42,6 @@
         -ms-user-select: none;
             user-select: none;
 }
-.added_qnt {
-    opacity: 0.6;
-}
-.added_qnt .card_bottom__togle {
-    cursor: default;
-}
-.added_qnt .card_bottom__togle:hover {
-    background: transparent;
-}
 .card_bottom__togle {
     width: 27.2px;
     display: grid;
@@ -60,10 +51,28 @@
 .card_bottom__togle:hover {
     background: #f5f5f5;
 }
+.card_bottom__togle:active {
+    background: #dbdbdb;
+}
 .cart {
     padding: 1rem;
     display: grid;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: 1fr 15% 10% 20% auto;
     background: #f0f0f0;
     grid-gap: 1rem;
+    align-items: center;
+}
+.item-del {
+    display: grid;
+    justify-items: center;
+    cursor: pointer;
+}
+.item-del * {
+    display: grid;
+    align-self: center;
+    font-size: 18px;
+    color: #919191;
+}
+.item-del:hover * {
+    color: #252525;
 }

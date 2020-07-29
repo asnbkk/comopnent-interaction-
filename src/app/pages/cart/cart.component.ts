@@ -7,13 +7,16 @@ import { ProductService } from 'src/app/services/product.service';
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent implements OnInit {
-  public productList = []
+  // public productList = []
   public product
   constructor( private _productService: ProductService ) {
-    this.productList = this._productService.getData()
    }
-
+  
   ngOnInit(): void {
+  }
+
+  get data() { //getter allows quickly updata changed data that comes from service
+    return this._productService.getData()
   }
 
 }

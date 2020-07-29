@@ -20,7 +20,12 @@
 
 <div class="cart" *ngIf="type == 'cart'">
     <div class="item">{{data.name}}</div>
-    <div class="item"></div>
+    <div class="item">{{data.qnt}}</div>
     <div class="item">{{data.price}}</div>
-    <div class="item">{{data.price}}</div>
+    <div class="item">{{data.price * data.qnt}}</div>
+    <div class="item-del" (click)="onDelete(data)">
+        <span class="material-icons">
+            clear
+            </span>
+    </div>
 </div>

@@ -1,10 +1,10 @@
 <div class="cart">
-    <div *ngFor="let p of productList; let last = last" [ngClass]="{'last-child': last}">
+    <div *ngFor="let p of data; let last = last" [ngClass]="{'last-child': last}">
         <div class="cart_item">    
             <app-card [card]="p" [type]="'cart'"></app-card>
         </div>
     </div>
 </div>
-<div *ngIf="!productList" class="empty-cart">
+<div *ngIf="!data" class="empty-cart">
     Cart is currently empty...
 </div>

@@ -10,12 +10,16 @@ export class ProductService {
   private length = new Subject<number>()
   cart$ = this.length.asObservable()
   
-  
+  data = []
+
+  dataChange: Subject<any> = new Subject<any>()
   
   private _url = "assets/data/products.json"
-  constructor(
-    private http: HttpClient,
-    ) {}
+  constructor( private http: HttpClient ) {
+      this.dataChange.subscribe((value) => {
+        this.data = value
+      })
+    }
 
   getProducts(): Observable<Product[]> {
     return this.http.get<Product[]>(this._url)
@@ -25,7 +29,6 @@ export class ProductService {
   //   this._addToCart.next(product)
   // }
 
-  data = []
   
   setData(data) {
     this.data = JSON.parse(localStorage.getItem('productList')) || []
@@ -37,8 +40,8 @@ export class ProductService {
   }
 
   getData() {
-    let data = localStorage.getItem('productList')
-    return JSON.parse(data)
+    this.data = JSON.parse(localStorage.getItem('productList'))
+    return this.data
   }
 
   incrementQnt(product) {    
@@ -58,7 +61,6 @@ export class ProductService {
 
   decrementQnt(product) {
     let products = JSON.parse(localStorage.getItem("productList") || "[]")
-    console.log(products)
     if(products.some(_product => _product.name == product.name)) {
       let i = products.findIndex(o => o.name == product.name)
       if(products[i].qnt > 1) {
