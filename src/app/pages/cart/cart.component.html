@@ -1,4 +1,10 @@
 <div class="cart">
+    <div class="cart_label">
+        <p>Name</p>
+        <p>Qnt</p>
+        <p>Price</p>
+        <p>Total</p>
+    </div>
     <div *ngFor="let p of data; let last = last" [ngClass]="{'last-child': last}">
         <div class="cart_item">    
             <app-card [card]="p" [type]="'cart'"></app-card>

@@ -17,3 +17,14 @@
     justify-content: center;
     color: #a0a0a0;
 }
+.cart_label {
+    display: grid;
+    grid-template-columns: 1fr 15% 10% 20% 18px;
+    grid-gap: 1rem;
+    padding: 0 1rem;
+}
+.cart_label p {
+    margin: 0;
+    font-size: 14px;
+    color: #919191;
+}
