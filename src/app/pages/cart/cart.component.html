@@ -1,4 +1,4 @@
-<div class="cart" *ngIf="data.length != 0">
+<div class="cart" *ngIf="data && data.length != 0">
     <div class="cart_label">
         <p>Name</p>
         <p>Qnt</p>
@@ -11,6 +11,6 @@
         </div>
     </div>
 </div>
-<div *ngIf="data.length == 0" class="empty-cart">
+<div *ngIf="data == null || data.length == 0" class="empty-cart">
     Cart is currently empty...
 </div>

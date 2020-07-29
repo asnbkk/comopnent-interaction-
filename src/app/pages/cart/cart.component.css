@@ -1,5 +1,4 @@
 .cart {
-    margin-top: 1rem;
     display: grid;
 }
 .cart_item {
@@ -19,7 +18,7 @@
 }
 .cart_label {
     display: grid;
-    grid-template-columns: 1fr 15% 10% 20% 18px;
+    grid-template-columns: 1fr 15% 10% 10% 18px;
     grid-gap: 1rem;
     padding: 0 1rem;
 }

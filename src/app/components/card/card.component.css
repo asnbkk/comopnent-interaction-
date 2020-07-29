@@ -57,7 +57,7 @@
 .cart {
     padding: 1rem;
     display: grid;
-    grid-template-columns: 1fr 15% 10% 20% auto;
+    grid-template-columns: 1fr 15% 10% 10% 18px;
     background: #f8f8f8;
     grid-gap: 1rem;
     align-items: center;
