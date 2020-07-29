@@ -4,6 +4,9 @@
 .cart_item {
     border-bottom: 1px solid #b3b3b3;
 }
+.qnt {
+    padding-left: 27.2px;
+}
 .last-child .cart_item{
     border: 0;
 }

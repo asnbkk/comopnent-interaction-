@@ -3,12 +3,14 @@
     background: #252525;
     display: grid;
     align-items: center;
+    grid-template-columns: 1fr auto;
+    padding: 0 2rem;
 }
 .links {
     display: grid;
     justify-self: end;
     grid-template-columns: auto auto;
-    margin-right: 2rem;
+    /* margin-right: 2rem; */
     position: relative;
     /* grid-gap: 1rem; */
 }
