@@ -14,7 +14,7 @@
             <div class="card_bottom__togle" (click)="onAdd(data)">+</div>
         </div> 
         <div class="card_button" (click)="addToCart(data)" *ngIf="!existingCart.includes(data.name)">Add to cart</div>
-        <div class="card_button added" (click)="addToCart(data)" *ngIf="existingCart.includes(data.name)">Added</div>
+        <div class="card_button added" (click)="onDelete(data)" *ngIf="existingCart.includes(data.name)">Added</div>
     </div>
 </div>
 

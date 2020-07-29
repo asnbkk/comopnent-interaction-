@@ -21,7 +21,6 @@ export class CardComponent implements OnInit {
   ngOnInit(): void {
     let cart = JSON.parse(localStorage.getItem('productList')) || []
     this.cart = cart
-    // console.log(this.cart)
     cart.forEach(item => {
       this.existingCart.push(item.name)
     })
@@ -49,14 +48,18 @@ export class CardComponent implements OnInit {
       this._productService.setData(product)
     }
   }
-
+  onDelete(product) {
+    this._productService.deleteFromCart(product)
+    let i = this.existingCart.findIndex(o => o.name == product.name)
+    this.existingCart.splice(i, 1)
+  }
   onAdd(product) {
     this._productService.incrementQnt(product)
   }
   onSubstract(product) {
     this._productService.decrementQnt(product)
   }
-    
+  
   // ngOnChanges(changes: SimpleChanges): void {
   //   const data = changes['card']
   //   this.data = data

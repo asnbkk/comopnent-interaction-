@@ -10,7 +10,7 @@ export class ProductService {
   private length = new Subject<number>()
   cart$ = this.length.asObservable()
   
-
+  
   
   private _url = "assets/data/products.json"
   constructor(
@@ -58,6 +58,7 @@ export class ProductService {
 
   decrementQnt(product) {
     let products = JSON.parse(localStorage.getItem("productList") || "[]")
+    console.log(products)
     if(products.some(_product => _product.name == product.name)) {
       let i = products.findIndex(o => o.name == product.name)
       if(products[i].qnt > 1) {
@@ -67,6 +68,21 @@ export class ProductService {
         product.qnt = --product.qnt
       }
     }
+    else {
+      product.qnt = --product.qnt
+    }
+  }
+
+  deleteFromCart(product) {
+    let products = JSON.parse(localStorage.getItem("productList") || "[]")
+    products.forEach(item => {
+      if(item.name == product.name) {
+        product.qnt = 1
+        let i = products.indexOf(item)
+        products.splice(i, 1)
+      }
+    })
+    localStorage.setItem("productList", JSON.stringify(products))
   }
   
 
