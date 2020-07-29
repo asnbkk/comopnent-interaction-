@@ -4,3 +4,11 @@
     grid-gap: 1rem;
     margin-top: 1rem;
 }
+.loader {
+    /* background: red; */
+    height: calc(100vh - 2rem);
+    display: grid;
+    align-items: center;
+    margin-top: -70px;
+    justify-content: center;
+}

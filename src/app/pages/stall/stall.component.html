@@ -3,3 +3,7 @@
       <app-card [card]="c" [type]="'def'"></app-card>
     </div>
 </div>
+
+<div *ngIf="cards.length == 0" class="loader">
+  <app-loader></app-loader>
+</div>

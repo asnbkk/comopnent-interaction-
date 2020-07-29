@@ -11,7 +11,9 @@ export class StallComponent implements OnInit {
   constructor(private _productService: ProductService) { }
 
   ngOnInit(): void {
-    this.getProducts()
+    setTimeout(() => {
+      this.getProducts()
+    }, 1000)
   }
 
   getProducts() {
