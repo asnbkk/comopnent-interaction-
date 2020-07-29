@@ -84,6 +84,7 @@ export class ProductService {
         products.splice(i, 1)
       }
     })
+    this.length.next(products.length)
     localStorage.setItem("productList", JSON.stringify(products))
   }
   

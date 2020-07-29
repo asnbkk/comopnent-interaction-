@@ -15,7 +15,6 @@ export class StallComponent implements OnInit {
   }
 
   getProducts() {
-    // let cart = JSON.parse(localStorage.getItem('productList'))
     this._productService.getProducts().subscribe(data => {
       this.cards = data
     })

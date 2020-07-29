@@ -1,33 +1,33 @@
 <div class="card" *ngIf="type == 'def'">
     <p>
         name:
-        {{data.name}}
+        {{card.name}}
     </p>
     <p>
         price:
-        {{data.price}}
+        {{card.price}}
     </p>
     <div class="card_bottom">
         <div class="card_bottom__qnt">
-            <div class="card_bottom__togle" (click)="onSubstract(data)">-</div>
-            {{data.qnt}}
-            <div class="card_bottom__togle" (click)="onAdd(data)">+</div>
+            <div class="card_bottom__togle" (click)="onSubstract(card)">-</div>
+            {{card.qnt}}
+            <div class="card_bottom__togle" (click)="onAdd(card)">+</div>
         </div>
-        <div class="card_button" (click)="addToCart(data)" *ngIf="!existingCart.includes(data.name)">Add to cart</div>
-        <div class="card_button added" (click)="onDelete(data)" *ngIf="existingCart.includes(data.name)">Added</div>
+        <div class="card_button" (click)="addToCart(card)" *ngIf="!existingCart.includes(card.name)">Add to cart</div>
+        <div class="card_button added" (click)="onDelete(card)" *ngIf="existingCart.includes(card.name)">Added</div>
     </div>
 </div>
 
 <div class="cart" *ngIf="type == 'cart'">
-    <div class="item">{{data.name}}</div>
+    <div class="item">{{card.name}}</div>
     <div class="item-qnt">
-        <div class="card_bottom__togle" (click)="onSubstract(data)">-</div>
-        {{data.qnt}}
-        <div class="card_bottom__togle" (click)="onAdd(data)">+</div>
+        <div class="card_bottom__togle" (click)="onSubstract(card)">-</div>
+        {{card.qnt}}
+        <div class="card_bottom__togle" (click)="onAdd(card)">+</div>
     </div>
-    <div class="item">{{data.price}}</div>
-    <div class="item">{{data.price * data.qnt}}</div>
-    <div class="item-del" (click)="onDelete(data)">
+    <div class="item">{{card.price}}</div>
+    <div class="item">{{card.price * card.qnt}}</div>
+    <div class="item-del" (click)="onDelete(card)">
         <span class="material-icons">
             clear
         </span>

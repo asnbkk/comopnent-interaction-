@@ -11,7 +11,7 @@ import { __values } from 'tslib';
 export class CardComponent implements OnInit {
   @Input() type: string
   private _data
-  data
+  // data
   cart
   constructor( private _productService: ProductService ) { }
 
@@ -31,13 +31,13 @@ export class CardComponent implements OnInit {
   }
   @Input()
   set card(value) { //setter: interceptor for input value
-    this._data = value //hz
     this.cart = JSON.parse(localStorage.getItem('productList')) || [] //get array of products from cart(localStorage)
     if(this.cart.some(_product => _product.name == value.name)) { //check: if "value" is already in cart. If so, change value of qnt to the identical as its in cart
-      let temp = this.cart.find(o => o.name == value.name)
-      value.qnt = temp.qnt
-    }
-    this.data = value//import all data
+    let temp = this.cart.find(o => o.name == value.name)
+    value.qnt = temp.qnt
+  }
+  // this.data = value//import all data
+  this._data = value //hz
   }  
 
 
@@ -49,9 +49,9 @@ export class CardComponent implements OnInit {
     }
   }
   onDelete(product) {
-    this._productService.deleteFromCart(product)
-    let i = this.existingCart.findIndex(o => o.name == product.name)
+    let i = this.existingCart.findIndex(o => o == product.name)
     this.existingCart.splice(i, 1)
+    this._productService.deleteFromCart(product)
   }
   onAdd(product) {
     this._productService.incrementQnt(product)
@@ -59,9 +59,4 @@ export class CardComponent implements OnInit {
   onSubstract(product) {
     this._productService.decrementQnt(product)
   }
-  
-  // ngOnChanges(changes: SimpleChanges): void {
-  //   const data = changes['card']
-  //   this.data = data
-  // }
 }
