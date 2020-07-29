@@ -13,7 +13,7 @@ export class StallComponent implements OnInit {
   ngOnInit(): void {
     setTimeout(() => {
       this.getProducts()
-    }, 1000)
+    }, 0)
   }
 
   getProducts() {
