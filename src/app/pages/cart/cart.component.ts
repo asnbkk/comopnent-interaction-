@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from 'src/app/services/product.service';
+import { DeviceDetectorService } from 'ngx-device-detector';
 
 @Component({
   selector: 'app-cart',
@@ -9,8 +10,9 @@ import { ProductService } from 'src/app/services/product.service';
 export class CartComponent implements OnInit {
   // public productList = []
   public product
-  constructor( private _productService: ProductService ) {
-    
+  public isMobile: boolean
+  constructor( private _productService: ProductService, private deviceService: DeviceDetectorService ) {
+    this.isMobile = this.deviceService.isMobile()
   }
   
   ngOnInit(): void {
@@ -18,7 +20,7 @@ export class CartComponent implements OnInit {
   }
 
   get data() { //getter allows quickly updata changed data that comes from service
-    console.log('action')
+    console.log(this._productService.getData())
     return this._productService.getData()
   }
 

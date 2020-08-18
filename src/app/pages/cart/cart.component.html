@@ -1,4 +1,4 @@
-<div class="cart" *ngIf="data && data.length != 0">
+<div class="cart" *ngIf="data && data.length != 0 && !isMobile">
     <div class="cart_label">
         <p>Name</p>
         <p class="qnt">Qnt</p>
@@ -6,11 +6,29 @@
         <p>Total</p>
     </div>
     <div *ngFor="let p of data; let last = last" [ngClass]="{'last-child': last}">
-        <div class="cart_item">    
+        <div class="cart_item">
             <app-card [card]="p" [type]="'cart'"></app-card>
         </div>
     </div>
 </div>
+<!-- //////////////////////// -->
+<div class="cart" *ngIf="data && data.length != 0 && isMobile">
+    <div class="mobile-cart_wrapper">
+        <div class="mobile-cart_label">
+            <p>Name</p>
+            <p>Qnt</p>
+            <!-- <p>Price</p> -->
+            <p>Total</p>
+        </div>
+        <div *ngFor="let p of data; let last = last" [ngClass]="{'last-child': last}">
+            <div class="cart_item">
+                <app-card [card]="p" [type]="'cart'"></app-card>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <div *ngIf="data == null || data.length == 0" class="empty-cart">
     Cart is currently empty...
 </div>

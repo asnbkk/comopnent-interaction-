@@ -85,6 +85,7 @@ export class ProductService implements DoCheck{
         products.splice(i, 1)
       }
     })
+    this.data = products
     this.length.next(products.length)
     localStorage.setItem("productList", JSON.stringify(products))
   }

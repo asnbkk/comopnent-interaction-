@@ -30,3 +30,20 @@
     font-size: 14px;
     color: #919191;
 }
+
+/* ///////////////////////////////// */
+
+.mobile-cart_wrapper {
+    margin: 0 -1rem;
+}
+.mobile-cart_label {
+    display: grid;
+    grid-template-columns: 1fr calc(74.4px - 27.7px) 15% 18px;
+    grid-gap: 1rem;
+    padding: 0 0.5rem 0 1rem;
+}
+.mobile-cart_label p {
+    margin: 0;
+    font-size: 14px;
+    color: #919191;
+}

@@ -105,3 +105,27 @@
     grid-template-rows: auto 1fr;
     /* align-content: center; */
 }
+.mobile-cart {
+    padding: 1rem 0.5rem 1rem 1rem;
+    display: grid;
+    grid-template-columns: 1fr auto 15% 18px;
+    background: #f8f8f8;
+    grid-gap: 1rem;
+    align-items: center;
+}
+.mobile-def_name {
+    font-size: 15px;
+    margin: 0;
+    /* overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;w */
+}
+.mobile-name {
+    text-overflow: ellipsis;
+    overflow: hidden; 
+    font-size: 15px;
+    /* height: 1.2em;  */
+    white-space: nowrap;
+}
