@@ -1,4 +1,4 @@
-<div class="cards" [ngStyle]="{'grid-template-columns': (isMobile) ? '1fr 1fr' : ''}">
+<div class="cards" [ngStyle]="{'grid-template-columns': (isMobile) ? 'repeat(auto-fill, minmax(156px, 1fr))' : 'repeat(auto-fill, minmax(220px, 1fr))'}">
     <div *ngFor="let c of cards">
       <app-card [card]="c" [type]="'def'"></app-card>
     </div>

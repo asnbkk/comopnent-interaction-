@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, SimpleChanges, HostListener } from '@angular/core';
 import { ProductService } from 'src/app/services/product.service';
 import { Product } from 'src/app/interfaces/product';
 import { DeviceDetectorService } from 'ngx-device-detector';
@@ -17,11 +17,24 @@ export class CardComponent implements OnInit {
   public isMobile: boolean
   constructor( private _productService: ProductService, private deviceService: DeviceDetectorService ) {
     this.isMobile = this.deviceService.isMobile()
+
+    this.screenWidth = this.onResize()
   }
 
   public existingCart = []
-
+  public screenWidth
     
+  @HostListener('window:resize', ['$event'])
+  onResize(event?) {
+  //  this.screenHeight = window.innerHeight;
+   this.screenWidth = window.innerWidth;
+   console.log(this.screenWidth)
+   if(this.screenWidth <= 359) {
+     this.isMobile = false
+   }
+   else this.isMobile = true
+}
+  
   ngOnInit(): void {
     let cart = JSON.parse(localStorage.getItem('productList')) || []
     this.cart = cart
