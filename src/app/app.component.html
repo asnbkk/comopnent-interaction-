@@ -1,5 +1,5 @@
 <app-header></app-header>
-<div class="content">
+<div class="content" [ngStyle]="{'min-height': (isMobile) ? 'calc(100vh - 70px - 32px)' : ''}">
     <router-outlet></router-outlet>
     <!-- <div class="cart">
         <app-cart></app-cart>

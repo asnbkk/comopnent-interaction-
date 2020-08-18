@@ -20,7 +20,6 @@ export class CartComponent implements OnInit {
   }
 
   get data() { //getter allows quickly updata changed data that comes from service
-    console.log(this._productService.getData())
     return this._productService.getData()
   }
 
