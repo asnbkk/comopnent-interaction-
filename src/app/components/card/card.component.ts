@@ -1,7 +1,8 @@
 import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { ProductService } from 'src/app/services/product.service';
 import { Product } from 'src/app/interfaces/product';
-import { __values } from 'tslib';
+import { DeviceDetectorService } from 'ngx-device-detector';
+
 
 @Component({
   selector: 'app-card',
@@ -13,7 +14,10 @@ export class CardComponent implements OnInit {
   private _data
   // data
   cart
-  constructor( private _productService: ProductService ) { }
+  public isMobile: boolean
+  constructor( private _productService: ProductService, private deviceService: DeviceDetectorService ) {
+    this.isMobile = this.deviceService.isMobile()
+  }
 
   public existingCart = []
 

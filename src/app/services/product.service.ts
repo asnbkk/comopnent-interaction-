@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, DoCheck } from '@angular/core';
 import { Subject, Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Product } from '../interfaces/product';
@@ -6,7 +6,7 @@ import { Product } from '../interfaces/product';
 @Injectable({
   providedIn: 'root'
 })
-export class ProductService {
+export class ProductService implements DoCheck{
   private length = new Subject<number>()
   cart$ = this.length.asObservable()
   
@@ -19,16 +19,14 @@ export class ProductService {
       this.dataChange.subscribe((value) => {
         this.data = value
       })
+
+      this.data = JSON.parse(localStorage.getItem('productList'))
+
     }
 
   getProducts(): Observable<Product[]> {
     return this.http.get<Product[]>(this._url)
   }
-
-  // addToCart(product: Product) {
-  //   this._addToCart.next(product)
-  // }
-
   
   setData(data) {
     this.data = JSON.parse(localStorage.getItem('productList')) || []
@@ -39,8 +37,11 @@ export class ProductService {
     this.length.next(this.data.length)
   }
 
-  getData() {
+  ngDoCheck() {
     this.data = JSON.parse(localStorage.getItem('productList'))
+  }
+
+  getData() {
     return this.data
   }
 

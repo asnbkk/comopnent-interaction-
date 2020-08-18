@@ -11,6 +11,7 @@ import { StallComponent } from './pages/stall/stall.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { LoaderComponent } from './components/loader/loader.component';
 import { MainComponent } from './pages/main/main.component';
+import { DeviceDetectorModule } from 'ngx-device-detector';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { MainComponent } from './pages/main/main.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    DeviceDetectorModule 
   ],
   providers: [],
   bootstrap: [AppComponent]

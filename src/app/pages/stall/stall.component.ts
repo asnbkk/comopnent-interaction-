@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from 'src/app/services/product.service';
+import { DeviceDetectorService } from 'ngx-device-detector';
 
 @Component({
   selector: 'app-stall',
@@ -8,7 +9,10 @@ import { ProductService } from 'src/app/services/product.service';
 })
 export class StallComponent implements OnInit {
   public cards = []
-  constructor(private _productService: ProductService) { }
+  public isMobile: boolean
+  constructor(private _productService: ProductService, private deviceService: DeviceDetectorService) {
+    this.isMobile = this.deviceService.isMobile()
+  }
 
   ngOnInit(): void {
     setTimeout(() => {

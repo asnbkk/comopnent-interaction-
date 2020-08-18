@@ -1,16 +1,19 @@
 .card {
     padding: 1rem;
     background: #f7f7f7;
+    display: grid;
+    grid-template-rows: 1fr auto auto;
 }
 .card_bottom {
     display: grid;
-    grid-template-columns: auto 1fr;
+    grid-template-columns: auto 1fr auto;
     grid-gap: 1rem;
 }
 .card_button {
     display: grid;
     background: #252525;
     height: 27.2px;
+    min-width: 27.2px;
     align-items: center;
     justify-content: center;
     color: #fff;
@@ -90,4 +93,15 @@
        -moz-user-select: none; /* Old versions of Firefox */
         -ms-user-select: none;
             user-select: none;
+}
+
+
+/* /////////////////////////// */
+
+.mobile-card_bottom {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-gap: 1rem;
+    grid-template-rows: auto 1fr;
+    /* align-content: center; */
 }

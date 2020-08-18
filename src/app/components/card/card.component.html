@@ -1,4 +1,4 @@
-<div class="card" *ngIf="type == 'def'">
+<div class="card" *ngIf="type == 'def'" [ngStyle]="{'height': (isMobile) ? '220px' : '250px'}">
     <p>
         name:
         {{card.name}}
@@ -7,7 +7,7 @@
         price:
         {{card.price}}
     </p>
-    <div class="card_bottom">
+    <div class="card_bottom" *ngIf="!isMobile">
         <div class="card_bottom__qnt">
             <div class="card_bottom__togle" (click)="onSubstract(card)">-</div>
             {{card.qnt}}
@@ -15,6 +15,18 @@
         </div>
         <div class="card_button" (click)="addToCart(card)" *ngIf="!existingCart.includes(card.name)">Add to cart</div>
         <div class="card_button added" (click)="onDelete(card)" *ngIf="existingCart.includes(card.name)">Added</div>
+        <div class="card_button">F</div>
+    </div>
+    <!-- //////////////////// -->
+    <div class="mobile-card_bottom" *ngIf="isMobile">
+        <div class="card_bottom__qnt">
+            <div class="card_bottom__togle" (click)="onSubstract(card)">-</div>
+            {{card.qnt}}
+            <div class="card_bottom__togle" (click)="onAdd(card)">+</div>
+        </div>
+        <div class="card_button">F</div>
+        <div class="card_button" [ngStyle]="{'grid-column': '1 / 3'}" (click)="addToCart(card)" *ngIf="!existingCart.includes(card.name)">Add to cart</div>
+        <div class="card_button added" [ngStyle]="{'grid-column': '1 / 3'}" (click)="onDelete(card)" *ngIf="existingCart.includes(card.name)">Added</div>
     </div>
 </div>
 
