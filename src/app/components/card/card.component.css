@@ -1,8 +1,19 @@
 .card {
     padding: 1rem;
-    background: #f7f7f7;
+    background: #fff;
+    border: 1px solid #6d6d6d;
     display: grid;
-    grid-template-rows: 1fr auto auto;
+    grid-template-rows: 100px 1fr auto auto;
+}
+.card_img {
+    height: 100px;
+    overflow: hidden;
+    display: grid;
+    justify-items: center;
+}
+.card_img img {
+    max-width: 100%;
+    max-height: 100px;
 }
 .card_bottom {
     display: grid;
@@ -114,8 +125,14 @@
     align-items: center;
 }
 .mobile-def_name {
-    font-size: 15px;
+    font-size: 13px;
+    overflow: hidden;
+width:100px;
+display: -webkit-box;
+-webkit-line-clamp: 3;
+-webkit-box-orient: vertical;
     margin: 0;
+    margin-top: 1rem;
     /* overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;

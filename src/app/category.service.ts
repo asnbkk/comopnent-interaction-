@@ -10,6 +10,7 @@ import { api_url } from '../assets/data/env'
 export class CategoryService {
 
   private backend = `${api_url}/api/categories/`
+  private backendProducts = `${api_url}/api/products/`
   private httpHeaders = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json'
@@ -21,7 +22,7 @@ export class CategoryService {
     return this.http.post(this.backend +   'shop/', {type: type, name: name}, this.httpHeaders)
   }
   GetBySubcat(title, subcatId, type, name): Observable<Products[]> {
-    return this.http.post<Products[]>(this.backend + 'subcategory/', { title: title,  subcat: subcatId, type: type, name: name } , this.httpHeaders)
+    return this.http.post<Products[]>(this.backendProducts + 'subcategory/', { title: title,  subcat: subcatId, type: type, name: name } , this.httpHeaders)
   }
 }
   

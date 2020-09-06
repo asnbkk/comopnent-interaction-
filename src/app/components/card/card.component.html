@@ -1,10 +1,12 @@
-<div class="card" *ngIf="type == 'def'" [ngStyle]="{'height': (isMobile) ? '220px' : '250px'}">
+<div class="card" *ngIf="type == 'def'" [ngStyle]="{'height': (isMobile) ? 'auto' : '250px'}">
+    <div class="card_img">
+        <img src="{{card.image}}" alt="">
+    </div>
     <p [ngClass]="{'mobile-def_name' : isMobile}">
         {{card.name}}
     </p>
     <p>
-        price:
-        {{card.price}}
+        {{card.price}} ₸
     </p>
     <div class="card_bottom" *ngIf="!isMobile">
         <div class="card_bottom__qnt">

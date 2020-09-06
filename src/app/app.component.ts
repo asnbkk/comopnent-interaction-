@@ -24,6 +24,7 @@ export class AppComponent implements AfterContentInit {
   ngAfterContentInit() {
     this.categoryService.getCategory('magaz', 'мкр. Астана, 4/1').subscribe(data => {
       let categories = data
+      // console.log(data)
       localStorage.setItem('categories', JSON.stringify(categories))
     })
 

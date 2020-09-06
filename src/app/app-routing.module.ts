@@ -10,7 +10,7 @@ import { CategoryListComponent } from './pages/category-list/category-list.compo
 
 const routes: Routes = [
   {path: '', component: MainComponent},
-  // {path: 'stall', component: StallComponent},
+  // {path: 'stall', component: StallComponent}
   {path: 'cart', component: CartComponent},
   {path: 'category', component: CategoryComponent, children: [
     {path: '', component: CategoryListComponent},

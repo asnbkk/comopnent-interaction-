@@ -24,8 +24,9 @@ export class StallComponent implements OnInit {
 
   ngOnInit(): void {
     this.categoryService.GetBySubcat(this.title, this.subcategory, 'magaz', 'мкр. Астана, 4/1').subscribe(data => {
-      // this.cards = data
+      this.cards = data
       console.log(data)
+      // console.log(this.title, this.subcategory)
     })
   }
 }
