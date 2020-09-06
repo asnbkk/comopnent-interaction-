@@ -1,0 +1,12 @@
+<app-mobile-header [title]="'Список продукции'" [type]="'secondary-inner'"></app-mobile-header>
+<app-promo></app-promo>
+<div class="catlist">
+    <div *ngFor="let cat of categories; let i = index">
+        <div class="catlist_item" [ngStyle]="{'border-color': (i == categories.length - 1) ? '#fff': '#e9e9e9'}" (click)="onNav(cat)">
+            {{cat.name}}
+            <span class="material-icons">
+                keyboard_arrow_right
+            </span>
+        </div>
+    </div>
+</div>

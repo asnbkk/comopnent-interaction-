@@ -5,6 +5,26 @@
     grid-template-columns: auto 2fr 1fr; */
     /* grid-gap: 3rem; */
 }
-.cart {
-    padding-left: 3rem;
+.nope {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    background: #f9fbf8;
+    height: 100vh;
+}
+.nope img {
+    height: 100px;
+    display: grid;
+    justify-self: center;
+}
+.nope_inner {
+    display: grid;
+    width: 310px;
+    justify-items: center;
+}
+.nope h2 {
+    margin: 0;
+}
+.nope span {
+    color: rgb(124, 124, 124);
 }

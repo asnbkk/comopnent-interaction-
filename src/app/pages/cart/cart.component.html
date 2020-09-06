@@ -13,12 +13,31 @@
 </div>
 <!-- //////////////////////// -->
 <div class="cart" *ngIf="data && data.length != 0 && isMobile">
+    <app-mobile-header *ngIf="isMobile" [title]="'Корзина'" [type]="'primary'"></app-mobile-header>
+    <app-mobile-header *ngIf="isMobile" [title]="'Чек-лист'" [type]="'secondary'"></app-mobile-header>
+    <div class="mobile-total">
+        <div class="mobile-total_item">
+            <span>Сумма заказа:</span>
+            <div class="line"></div>
+            <span>123123 ₸</span>
+        </div>
+        <div class="mobile-total_item">
+            <span>Стоймость доставки:</span>
+            <div class="line"></div>
+            <span>500 ₸</span>
+        </div>
+        <div class="mobile-total_total">
+            <span [ngStyle]="{'text-align': 'right'}">Итого:</span>
+            <span>1000 ₸</span>
+        </div>
+    </div>
+    <app-mobile-header *ngIf="isMobile" [title]="'Состав заказа'" [type]="'secondary'"></app-mobile-header>
     <div class="mobile-cart_wrapper">
         <div class="mobile-cart_label">
-            <p>Name</p>
-            <p>Qnt</p>
+            <p>Название</p>
+            <p>Кол-во</p>
             <!-- <p>Price</p> -->
-            <p>Total</p>
+            <p>Сумма(₸)</p>
         </div>
         <div *ngFor="let p of data; let last = last" [ngClass]="{'last-child': last}">
             <div class="cart_item">

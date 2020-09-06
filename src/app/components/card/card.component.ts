@@ -28,7 +28,6 @@ export class CardComponent implements OnInit {
   onResize(event?) {
   //  this.screenHeight = window.innerHeight;
    this.screenWidth = window.innerWidth;
-   console.log(this.screenWidth)
    if(this.screenWidth <= 359) {
      this.isMobile = false
    }

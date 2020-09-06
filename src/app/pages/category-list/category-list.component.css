@@ -1,0 +1,7 @@
+.catlist_item {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    height: 50px;
+    border-bottom: 1px solid;
+    align-items: center;
+}

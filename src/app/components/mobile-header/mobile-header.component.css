@@ -1,0 +1,22 @@
+.m-header-primary {
+    margin-bottom: 1rem;
+    line-height: 24px;
+    font-size: 24px;
+    font-weight: bold;
+}
+.m-header-secondary {
+    font-size: 18px;
+    line-height: 18px;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+.m-header-secondary-inner {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-gap: 10px;
+    font-size: 18px;
+    line-height: 18px;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    /* align-items: center; */
+}

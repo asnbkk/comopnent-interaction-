@@ -1,9 +1,10 @@
 body {
-    font-family: 'Mukta', sans-serif;
+    font-family: 'Rubik', sans-serif;
     margin: 0;
+    font-weight: 500;
 }
 button {
-    font-family: 'Mukta', sans-serif;
+    font-family: 'Rubik', sans-serif;
     font-weight: 500;    
     font-size: 14px;
     padding: 0 1rem;

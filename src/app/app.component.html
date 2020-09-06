@@ -1,8 +1,15 @@
-<app-header></app-header>
-<div class="content" [ngStyle]="{'min-height': (isMobile) ? 'calc(100vh - 70px - 32px)' : ''}">
-    <router-outlet></router-outlet>
-    <!-- <div class="cart">
-        <app-cart></app-cart>
-    </div> -->
+<div *ngIf="isMobile">
+    <app-header></app-header>
+    <div class="content" [ngStyle]="{'min-height': (isMobile) ? 'calc(100vh - 70px - 32px)' : ''}">
+        <router-outlet></router-outlet>
+    </div>
+    <app-footer></app-footer>
 </div>
-<app-footer></app-footer>
+<div class="nope" *ngIf="!isMobile">
+    <div class="nope_inner">
+        <h2>Сайт работает только на <br>мобильных устройствах.</h2>
+        <img src="../assets/img/tenor.gif" alt="">
+        <span>Revenir uniquement à partir d'appareils mobiles.</span>
+    </div>
+
+</div>

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from 'src/app/services/product.service';
 import { DeviceDetectorService } from 'ngx-device-detector';
+import { CategoryService } from 'src/app/category.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-stall',
@@ -9,21 +11,21 @@ import { DeviceDetectorService } from 'ngx-device-detector';
 })
 export class StallComponent implements OnInit {
   public cards = []
+  public title
   public isMobile: boolean
-  constructor(private _productService: ProductService, private deviceService: DeviceDetectorService) {
+  public subcategory
+  constructor(private categoryService: CategoryService, 
+              private deviceService: DeviceDetectorService,
+              private route: ActivatedRoute) {
     this.isMobile = this.deviceService.isMobile()
+    this.title = this.route.snapshot.paramMap.get('id')
+    this.subcategory = decodeURI(this.route.snapshot.paramMap.get('subcat'))
   }
 
   ngOnInit(): void {
-    setTimeout(() => {
-      this.getProducts()
-    }, 0)
-  }
-
-  getProducts() {
-    this._productService.getProducts().subscribe(data => {
-      this.cards = data
+    this.categoryService.GetBySubcat(this.title, this.subcategory, 'magaz', 'мкр. Астана, 4/1').subscribe(data => {
+      // this.cards = data
+      console.log(data)
     })
   }
-
 }

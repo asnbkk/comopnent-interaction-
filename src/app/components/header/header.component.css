@@ -24,10 +24,23 @@
     color: #252525;
     padding: 0 1rem;
     display: grid;
+    font-weight: bold;
     justify-self: start;
     text-decoration: none;
     background: #fff;
-
+}
+.mobile-logo {
+    color: #252525;
+    width: 21px;
+    height: 21px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    display: grid;
+    font-weight: bold;
+    justify-self: start;
+    text-decoration: none;
+    background: #fff;
 }
 .active {
     color: #252525 !important;

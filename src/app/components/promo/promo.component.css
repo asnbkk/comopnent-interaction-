@@ -1,0 +1,16 @@
+.promo {
+    background: #f9fbf8;
+    margin: 0 -1rem;
+    padding: 0 1rem;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-gap: 1rem;
+}
+.promo_content {
+    padding: 1rem 0;
+    display: grid;
+    grid-template-rows: 1fr auto;
+}
+.promo img {
+    height: 100px;
+}
