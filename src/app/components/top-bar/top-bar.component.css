@@ -1,0 +1,31 @@
+.header {
+    background: #FF6A6A;
+    padding: 1rem;
+    border-radius: 0 0 20px 0;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+}
+.header_top {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    grid-gap: 1rem;
+}
+.header-item {
+    height: 40px;
+    width: 40px;
+    border-radius: 5px;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    background: #FF8080;
+}
+.header_middle {
+    padding-top: 1rem;
+    font-size: 14px;
+    font-weight: 400;
+    display: grid;
+}
+.header_middle span {
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+}

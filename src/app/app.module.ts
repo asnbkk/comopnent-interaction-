@@ -17,6 +17,9 @@ import { CategoryComponent } from './pages/category/category.component';
 import { SubcategoryComponent } from './pages/subcategory/subcategory.component';
 import { CategoryListComponent } from './pages/category-list/category-list.component';
 import { PromoComponent } from './components/promo/promo.component';
+import { TopBarComponent } from './components/top-bar/top-bar.component';
+import { ButtonComponent } from './components/button/button.component';
+import { SvgComponent } from './components/svg/svg.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,10 @@ import { PromoComponent } from './components/promo/promo.component';
     CategoryComponent,
     SubcategoryComponent,
     CategoryListComponent,
-    PromoComponent
+    PromoComponent,
+    TopBarComponent,
+    ButtonComponent,
+    SvgComponent
   ],
   imports: [
     BrowserModule,

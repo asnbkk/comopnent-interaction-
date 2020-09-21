@@ -1,0 +1,18 @@
+<div class="header">
+    <div class="header_top">
+        <app-button [type]="'primary'" [text]="'Сменить магазин'"></app-button>
+        <div class="header-item">
+            <app-svg [img]="'ig'"></app-svg>
+        </div>
+        <div class="header-item">
+            <span class="material-icons" [ngStyle]="{'color': '#fff'}">
+                phone
+            </span>
+        </div>
+    </div>
+    <div class="header_middle">
+        <span *ngIf="shopCategory.type == 'market'">Мини-маркет</span>
+        <span *ngIf="shopCategory.type == 'pharm'">Аптека</span>
+        {{shopCategory.name}}
+    </div>
+</div>

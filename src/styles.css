@@ -9,3 +9,6 @@ button {
     font-size: 14px;
     padding: 0 1rem;
 }
+:focus {
+    outline: none;
+}

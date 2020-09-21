@@ -1,0 +1,8 @@
+[
+    {"name": "Астана 24/1", "type": "market"},
+    {"name": "Привесить 24/1", "type": "market"},
+    {"name": "Перемножение 24/1", "type": "market"},
+    {"name": "Баламалака 23/1", "type": "pharm"},
+    {"name": "Вбухнова 24/1", "type": "pharm"},
+    {"name": "Колоколова 24/1", "type": "pharm"}
+]

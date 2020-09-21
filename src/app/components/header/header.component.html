@@ -1,21 +1,42 @@
-<div class="header" *ngIf="!isMobile">
-    <a class="logo" routerLink="/">Duken.</a>
-    <div class="links">
-        <a routerLinkActive="active" routerLink="/stall">Stall</a>
-        <a routerLinkActive="active" routerLink="/cart">Cart</a>
-        <div class="badge">
-            {{badge}}
+<div class="mobile-header" *ngIf="isMobile">
+    <div class="mobile-header_item" routerLink='' routerLinkActive="active">
+        <span class="material-icons-outlined">
+            home
+        </span>
+        <div class="mobile-header_item__label">
+            Главная
         </div>
     </div>
-</div>
-<!-- ///////////////////////// -->
-<div class="header mobile-header" *ngIf="isMobile">
-    <a class="mobile-logo" routerLink="/">D.</a>
+    <div class="mobile-header_item" routerLink='/category' routerLinkActive="active">
+        <span class="material-icons-outlined">
+            category
+        </span>
+        <div class="mobile-header_item__label">
+            Каталог
+        </div>
+    </div>
+    <div class="mobile-header_item" routerLink='/search' routerLinkActive="active">
+        <span class="material-icons-outlined">
+            search
+        </span>
+        <div class="mobile-header_item__label">
+            Поиск
+        </div>
+    </div>
+    <div class="mobile-header_item" routerLink='/cart' routerLinkActive="active">
+        <span class="material-icons-outlined">
+            shopping_cart
+        </span>
+        <div class="mobile-header_item__label">
+            Корзина
+        </div>
+    </div>
+    <!-- <a class="mobile-logo" routerLink="/">D.</a>
     <div class="links">
         <a routerLinkActive="active" routerLink="/category">Каталог</a>
         <a routerLinkActive="active" routerLink="/cart">Корзина</a>
         <div class="badge">
             {{badge}}
         </div>
-    </div>
+    </div> -->
 </div>
