@@ -7,7 +7,6 @@ import { CategoryComponent } from './pages/category/category.component';
 import { SubcategoryComponent } from './pages/subcategory/subcategory.component';
 import { CategoryListComponent } from './pages/category-list/category-list.component';
 
-
 const routes: Routes = [
   {path: 'home', component: MainComponent},
   // {path: 'stall', component: StallComponent}

@@ -10,15 +10,18 @@ import { CategoryService } from './category.service';
 })
 export class AppComponent implements AfterContentInit {
   title = 'component-interaction';
-  public isMobile: boolean
+  
+  // public isMobile: boolean
   public isDarkMode: boolean
   constructor(private deviceService: DeviceDetectorService, 
               private userService: UserService,
               private categoryService: CategoryService
               ) {
-    this.isMobile = this.deviceService.isMobile()
-
     this.isDarkMode = this.userService.isDarkMode
+  }
+
+  get isMobile() {
+    return this.deviceService.isMobile()
   }
 
   ngAfterContentInit() {

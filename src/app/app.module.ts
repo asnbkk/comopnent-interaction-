@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http'
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -21,6 +22,9 @@ import { TopBarComponent } from './components/top-bar/top-bar.component';
 import { ButtonComponent } from './components/button/button.component';
 import { SvgComponent } from './components/svg/svg.component';
 
+import { AgmCoreModule, GoogleMapsAPIWrapper } from '@agm/core';
+import { GoogleMapsComponent } from './components/google-maps/google-maps.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,15 +42,19 @@ import { SvgComponent } from './components/svg/svg.component';
     PromoComponent,
     TopBarComponent,
     ButtonComponent,
-    SvgComponent
+    SvgComponent,
+    GoogleMapsComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    DeviceDetectorModule 
-  ],
-  providers: [],
+    DeviceDetectorModule,
+    FormsModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBMFQYw2Pjfz4957O0llOj_7i4wXOg8rSU'
+    })  ],
+  providers: [GoogleMapsAPIWrapper],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

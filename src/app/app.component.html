@@ -12,9 +12,12 @@
 
 <div class="nope" *ngIf="!isMobile">
     <div class="nope_inner">
+        {{isMobile}}
         <h2>Сайт работает только на <br>мобильных устройствах.</h2>
         <img src="../assets/img/tenor.gif" alt="">
         <span>Revenir uniquement à partir d'appareils mobiles.</span>
     </div>
-
+    <div class="map-wrapper">
+        <app-google-maps></app-google-maps>
+    </div>
 </div>

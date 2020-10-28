@@ -28,3 +28,9 @@
 .nope span {
     color: rgb(124, 124, 124);
 }
+
+.map-wrapper {
+    display: grid;
+    width: 100%;
+    height: 400px;
+}
